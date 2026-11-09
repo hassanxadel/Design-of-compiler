@@ -20,10 +20,12 @@ public class Tiny extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        
-        Scene scene = new Scene(root);
-        stage.setTitle("TINY Lang. Compiler");
-        stage.setResizable(false);
+
+        Scene scene = new Scene(root, 700, 760);
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        stage.setTitle("TINY Language Compiler");
+        stage.setMinWidth(560);
+        stage.setMinHeight(500);
         stage.centerOnScreen();
         stage.setScene(scene);
         stage.show();

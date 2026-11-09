@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane styleClass="root-pane" prefHeight="760.0" prefWidth="700.0"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="tiny.FXMLDocumentController">
+    <top>
+        <VBox styleClass="header">
+            <padding>
+                <Insets bottom="18.0" left="28.0" right="28.0" top="22.0" />
+            </padding>
+            <children>
+                <Label styleClass="title-label" text="TINY Language Compiler" />
+                <Label styleClass="subtitle-label" text="Lexical analyzer &amp; token scanner" />
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <TextArea fx:id="text" styleClass="code-area" promptText="Type or paste your TINY program here, then press Scan..." wrapText="true">
+            <BorderPane.margin>
+                <Insets bottom="10.0" left="28.0" right="28.0" top="4.0" />
+            </BorderPane.margin>
+        </TextArea>
+    </center>
+    <bottom>
+        <HBox styleClass="footer" alignment="CENTER_LEFT" spacing="12.0">
+            <padding>
+                <Insets bottom="20.0" left="28.0" right="28.0" top="4.0" />
+            </padding>
+            <children>
+                <Label fx:id="statusLabel" styleClass="status-label" text="Ready" HBox.hgrow="ALWAYS" />
+                <Button fx:id="scanbtn" styleClass="scan-button" mnemonicParsing="false" onAction="#handleButtonAction" text="Scan" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
